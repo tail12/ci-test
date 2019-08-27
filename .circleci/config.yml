@@ -11,14 +11,21 @@ jobs:
         run:
           name: 'show the list'
           command: 'ls -la'
-
+      -
+        run:
+          name: 'execute echo command'
+          command: 'echo $(pwd)'
+      -
+        run: 
+          name: 'echo'
+          command: 'echo "add echo command"'
 workflows:
   version: 2
   build:
     jobs:
       -
         deploy-staging:
-          context: org-global
+          context: AWS_ENVIRONMENT
           filters:
             branches:
               only:
