@@ -1,0 +1,25 @@
+version: 2
+jobs:
+  deploy-staging:
+    machine: true
+    working_directory: ~/workspace
+    steps:
+      -
+        checkout:
+          path: repo
+      -
+        run:
+          name: 'show the list'
+          command: 'ls -la'
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      -
+        deploy-staging:
+          context: org-global
+          filters:
+            branches:
+              only:
+                stg-env
