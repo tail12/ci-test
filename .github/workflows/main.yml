@@ -16,8 +16,8 @@ jobs:
         unzip master.zip
         cd tflint-master && chmod +x install_linux.sh
         ./install_linux.sh
-    - name: show position
-      uses: ./
+    - uses: ./
+    - name: check directory
       run: |
         pwd
         ls
