@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Install TFLint
+      run: |
+        wget https://github.com/wata727/tflint/archive/master.zip
+        unzip master.zip
+        cd master && chmod +x install_linux.sh
+        ./install_linux.sh
+      
+    
+#     - uses: actions/checkout@v1
+#     - name: Run a one-line script
+#       run: echo Hello, world!
+#     - name: Run a multi-line script
+#       run: |
+#         echo Add other actions to build,
+#         echo test, and deploy your project.
