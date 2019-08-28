@@ -17,10 +17,6 @@ jobs:
         cd tflint-master && chmod +x install_linux.sh
         ./install_linux.sh
     - uses: actions/checkout@master
-    - name: check directory
-      run: |
-        pwd
-        ls
     - name: check tf file
       run: tflint ec2.tf
 
