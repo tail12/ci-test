@@ -16,7 +16,7 @@ jobs:
         unzip master.zip
         cd tflint-master && chmod +x install_linux.sh
         ./install_linux.sh
-    - uses: ./
+    - uses: actions/checkout@master
     - name: check directory
       run: |
         pwd
