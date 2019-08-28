@@ -16,4 +16,6 @@ jobs:
         unzip master.zip
         cd tflint-master && chmod +x install_linux.sh
         ./install_linux.sh
+    - name: check tf file
+      run: tflint ec2.tf
 
