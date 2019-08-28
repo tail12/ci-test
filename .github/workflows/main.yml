@@ -17,6 +17,7 @@ jobs:
         cd tflint-master && chmod +x install_linux.sh
         ./install_linux.sh
     - name: show position
+      uses: ./
       run: |
         pwd
         ls
